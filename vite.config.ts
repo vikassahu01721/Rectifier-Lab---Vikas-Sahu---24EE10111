@@ -1,11 +1,12 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
   return {
-    base: '/Rectifier-Lab---Vikas-Sahu---24EE10111/',
+    // Sets base path so assets load correctly on GitHub Pages
+    base: mode === 'production' ? '/Rectifier-Lab---Vikas-Sahu---24EE10111/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
